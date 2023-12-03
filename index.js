@@ -1,10 +1,10 @@
 // let tasks = []
-const inputEl = document.querySelector("input")
-const addBtn = document.querySelector(".add")
-const deleteBtn = document.querySelector(".clear")
-const ul = document.querySelector("ul")
+const inputEl = document.querySelector('input')
+const addBtn = document.querySelector('.add')
+const deleteBtn = document.querySelector('.clear')
+const ul = document.querySelector('ul')
 
-const tasksFromLocalStorage = JSON.parse(localStorage.getItem("tasks")) || []
+let tasksFromLocalStorage = JSON.parse(localStorage.getItem('tasks')) || []
 
 const updateListAndStorage = (task) => {
     ul.innerHTML = '';
@@ -15,25 +15,30 @@ const updateListAndStorage = (task) => {
 
         ul.append(newTask)
     }
+    localStorage.setItem('tasks', JSON.stringify(newTask))
 }
 
 if (tasksFromLocalStorage) {
-    tasks = tasksFromLocalStorage
-    updateListAndStorage(tasks)
+    updateListAndStorage(tasksFromLocalStorage)
 }
 
 addBtn.addEventListener('click', () => {
-    let inputValue = inputEl.value.trim()
+    const inputValue = inputEl.value.trim()
 
     if (inputValue !== '') {
-        tasks.push(inputValue)
-        localStorage.setItem("tasks", JSON.stringify(tasksFromLocalStorage))
+        tasksFromLocalStorage.push(inputValue)
 
-        updateListAndStorage(tasks)
+        updateListAndStorage(tasksFromLocalStorage)
     }
     clearInput()
 })
 
+deleteBtn.addEventListener('click', () => {
+    localStorage.clear();
+    tasksFromLocalStorage = [];
+    updateListAndStorage(tasksFromLocalStorage)
+})
+
 const clearInput = () => {
-    inputEl.value = ""
+    inputEl.value = ''
 }
