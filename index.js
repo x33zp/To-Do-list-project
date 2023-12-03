@@ -1,10 +1,10 @@
-let tasks = []
+// let tasks = []
 const inputEl = document.querySelector("input")
 const addBtn = document.querySelector(".add")
 const deleteBtn = document.querySelector(".clear")
 const ul = document.querySelector("ul")
 
-const tasksFromLocalStorage = JSON.parse(localStorage.getItem("tasks"))
+const tasksFromLocalStorage = JSON.parse(localStorage.getItem("tasks")) || []
 
 const updateListAndStorage = (task) => {
     ul.innerHTML = '';
@@ -23,11 +23,11 @@ if (tasksFromLocalStorage) {
 }
 
 addBtn.addEventListener('click', () => {
-    let inputValue = inputEl.value
+    let inputValue = inputEl.value.trim()
 
-    if (inputValue != '') {
+    if (inputValue !== '') {
         tasks.push(inputValue)
-        localStorage.setItem("tasks", JSON.stringify(tasks))
+        localStorage.setItem("tasks", JSON.stringify(tasksFromLocalStorage))
 
         updateListAndStorage(tasks)
     }
