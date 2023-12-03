@@ -6,15 +6,15 @@ const ul = document.querySelector('ul')
 
 let tasksFromLocalStorage = JSON.parse(localStorage.getItem('tasks')) || []
 
-const updateListAndStorage = (task) => {
+const updateListAndStorage = (tasks) => {
     ul.innerHTML = '';
 
-    for (i = 0; i < task.length; i++) {
+    tasks.forEach(task => {
         const newTask = document.createElement('li')
-        newTask.textContent = task[i]
+        newTask.textContent = task
 
         ul.append(newTask)
-    }
+    })
 }
 
 if (tasksFromLocalStorage) {
