@@ -1,7 +1,7 @@
 # Todo List App
 
 
-**This is a simple Todo List application built with JavaScript that allows users to manage their tasks. The project focuses on utilizing LocalStorage in JavaScript to persist user data locally in the browser.**
+**This is a simple Todo List application built with JavaScript that allows users to manage their tasks. The project focuses on utilizing `localStorage` in JavaScript to persist user data locally in the browser.**
 
 ## Features
 
