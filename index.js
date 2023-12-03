@@ -1,4 +1,3 @@
-// let tasks = []
 const inputEl = document.querySelector('input')
 const addBtn = document.querySelector('.add')
 const deleteBtn = document.querySelector('.clear')
