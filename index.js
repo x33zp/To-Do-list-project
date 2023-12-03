@@ -15,7 +15,6 @@ const updateListAndStorage = (task) => {
 
         ul.append(newTask)
     }
-    localStorage.setItem('tasks', JSON.stringify(newTask))
 }
 
 if (tasksFromLocalStorage) {
@@ -28,6 +27,7 @@ addBtn.addEventListener('click', () => {
     if (inputValue !== '') {
         tasksFromLocalStorage.push(inputValue)
 
+        localStorage.setItem('tasks', JSON.stringify(tasksFromLocalStorage))
         updateListAndStorage(tasksFromLocalStorage)
     }
     clearInput()
