@@ -18,7 +18,7 @@
 ## How to Use
 - Clone the repository:
 ```
-git clone https://github.com/your-username/todo-list.git
+git clone https://github.com/x33zp/To-Do-list-project.git
 ```
 - Open index.html in your browser to use the app.
 
