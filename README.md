@@ -26,4 +26,4 @@ git clone https://github.com/your-username/todo-list.git
 
 For an in-depth explanation of how LocalStorage works in JavaScript and its implementation in this project, check out the accompanying Medium or Dev article links below: <br />
 [Medium.](https://medium.com/@zubbypeculiar/39d22b11d80e) <br />
-[Dev.](https://medium.com/@zubbypeculiar/39d22b11d80e)
+[Dev.](https://dev.to/x33zp/exploring-local-storage-in-javascript-understanding-implementation-and-impact-57i)
